@@ -12,7 +12,7 @@ This is the wifi card already builtin in the Dell XPS 13 9333.
 
 ## Trackpad
 ### VoodooPS2 (the easy way)
-This is the easy solution to get your trackpad and gestures working. Just use [VoodooPS2 Version 2.1.9](https://github.com/acidanthera/VoodooPS2/releases/tag/2.1.9). As of writing this the Version 2.2.0 was released which didn't seem to work this particular system.
+This is the easy solution to get your trackpad and gestures working. Just use [VoodooPS2 Version 2.1.9](https://github.com/acidanthera/VoodooPS2/releases/tag/2.1.9). As of writing this the Version 2.2.0 was released which didn't seem to work with this particular system.
 
 ### VoodooI2C (the non easy way)
 Trying to setup VoodooI2C over several days only resulted in the trackpad working with basic features. Gestures and scrolling doesn't seem to function on the Dell XPS 13 9333 this way. The trackpad gets recognised as ```TPD1```, but using VoodooI2C in combination with VoodooI2CHID and remvoing the interrupt sequence as suggested causes the trackpad to run in polling mode only (as seen in the system.log).
@@ -43,6 +43,16 @@ Our final result looks like this.
 
 
 ### Battery SSDT Hotpatch
+Before you try to hotpatch your battery I recommend to read this entire guide several times [Battery Status Hotpatch](https://www.tonymacx86.com/threads/guide-using-clover-to-hotpatch-acpi.200137/). The whole process of creating your own ```SSDT``` won't be discussed here. Adding the necessary methods into the right scopes shouldn't be too difficult. I think the only interesting part showing is the final trimmed  ```OperationRegion``` which looks like this. 
+
+```
+trimmed
+```
+
+This is how the final ```SSDT-XBAT.aml``` looks like.
+
+**Note:** I'm not an expert at hotpatching. This hotpatch might work on my system, but I can't guarantee it will work on yours. Use at your own risk. (You should create your own hotpatch anyways.)
+
 
 ### Audio (ALC668)
 The audio device ```ALC3661``` is a rebrand of the ```ALC668```. In order to get the audio working you have you apply the ```layout-id``` mentioned under 

@@ -10,6 +10,7 @@ foo
 This is the wifi card already builtin in the Dell XPS 13 9333. For your first setup you can use [itlwm](https://openintelwireless.github.io/itlwm/) in combination with [HeliPort](https://openintelwireless.github.io/HeliPort/)
 ### Broadcom DW1820A
 I swapped the original wifi chip for the DW1820A since i was able to get it for a lower price than usual. Keep in mind that the DW1820 and DW180**A** are two different models.
+
 <img src="https://github.com/ddening/opencore-dell-xps-13-9333/blob/main/resources/img-01.png" width="532" height="399">
 
 #### 5GHz connection not working

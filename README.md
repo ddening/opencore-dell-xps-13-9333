@@ -13,7 +13,7 @@ I swapped the original wifi chip for the DW1820A since i was able to get it for 
 IMAGE
 
 #### 5GHz connection not working
-Out of the box I was not able to connect to any 5GHz network. In order to fix this problem I simply added ```brcmfx-country=XX``` to my ```PciRoot(0x0)/Pci(0x1C,0x2)/Pci(0x0,0x0)``` under DeviceProperties. Didn't have to make any further adjustments.
+Out of the box I was not able to connect to any 5GHz network. In order to fix this problem I simply added ```brcmfx-country=XX``` to my ```PciRoot(0x0)/Pci(0x1C,0x2)/Pci(0x0,0x0)``` under DeviceProperties. ```XX = your country code, e.g. US```. To figure out the device ID of your network card you can either use [gfxutil](https://github.com/acidanthera/gfxutil/releases) or [Hackintool](https://github.com/headkaze/Hackintool). Didn't have to make any further adjustments.
 
 #### Bluetooth not working
 At some point I encountered a weird bug(?) where I was not able to get any bluetooth connectivity at all. The solution to this problem was even weirder. Booting into my linux system from a USB stick, verifying that bluetooth actually works, and then booting back to macOS solved the bluetooth problem and hasn't occured since. 

@@ -5,10 +5,18 @@ A documentation about my progress setting up macOS Catalina on a Dell XPS 13 933
 foo
 
 ## WiFi / Bluetooth
-Foo
+
 ### Intel Wireless AC 7260
-This is the wifi card already builtin in the Dell XPS 13 9333.
+This is the wifi card already builtin in the Dell XPS 13 9333. For your first setup you can use [itlwm](https://openintelwireless.github.io/itlwm/) in combination with [HeliPort](https://openintelwireless.github.io/HeliPort/)
 ### Broadcom DW1820A
+I swapped the original wifi chip for the DW1820A since i was able to get it for a lower price than usual. Keep in mind that the DW1820 and DW180**A** are two different models.
+IMAGE
+
+#### 5GHz connection not working
+Out of the box I was not able to connect to any 5GHz network. In order to fix this problem I simply added ... to my ```config.plist```. Didn't have to make any further adjustments.
+
+#### Bluetooth not working
+At some point I encountered a weird bug(?) where I was not able to get any bluetooth connectivity at all. The solution to this problem was even weirder. Booting into my linux system from a USB stick, verifying that bluetooth actually works, and then booting back to macOS solved the bluetooth problem and hasn't occured since. 
 
 ## Trackpad
 ### VoodooPS2 (the easy way)

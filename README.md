@@ -171,7 +171,6 @@ This is how the final ```SSDT-XBAT.aml``` looks like.
    
     Scope (_SB.BAT0)
     {
-        //Scope (BAT0){
         Method (_BIF, 0, Serialized)  // _BIF: Battery Information
         {
             Store ("BIF0", Debug)

@@ -19,7 +19,7 @@ At some point I encountered a weird bug(?) where I was not able to get any bluet
 
 ## Trackpad
 ### VoodooPS2 (the easy way)
-This is the easy solution to get your trackpad and gestures working. Just use [VoodooPS2 Version 2.1.9](https://github.com/acidanthera/VoodooPS2/releases/tag/2.1.9). As of writing this the Version 2.2.0 was released which didn't seem to work with this particular system.
+This is the easy solution to get your trackpad and gestures working. Just use [VoodooPS2 Version 2.1.9](https://github.com/acidanthera/VoodooPS2/releases/tag/2.1.9). As of writing this version 2.2.0 was released which didn't seem to work with this particular system.
 
 ### VoodooI2C (the non easy way)
 Trying to setup VoodooI2C over several days only resulted in the trackpad working with basic features. Gestures and scrolling doesn't seem to function on the Dell XPS 13 9333 this way. The trackpad gets recognised as ```TPD1```, but using VoodooI2C in combination with VoodooI2CHID and remvoing the interrupt sequence as suggested causes the trackpad to run in polling mode only (as seen in the system.log).

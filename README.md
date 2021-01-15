@@ -10,7 +10,7 @@ foo
 This is the wifi card already builtin in the Dell XPS 13 9333. For your first setup you can use [itlwm](https://openintelwireless.github.io/itlwm/) in combination with [HeliPort](https://openintelwireless.github.io/HeliPort/)
 ### Broadcom DW1820A
 I swapped the original wifi chip for the DW1820A since i was able to get it for a lower price than usual. Keep in mind that the DW1820 and DW180**A** are two different models.
-IMAGE
+![Broadcom DW1820A](resources/img-01.png)
 
 #### 5GHz connection not working
 Out of the box I was not able to connect to any 5GHz network. In order to fix this problem I simply added ```brcmfx-country=XX``` to my ```PciRoot(0x0)/Pci(0x1C,0x2)/Pci(0x0,0x0)``` under DeviceProperties. ```XX = your country code, e.g. US```. To figure out the device ID of your network card you can either use [gfxutil](https://github.com/acidanthera/gfxutil/releases) or [Hackintool](https://github.com/headkaze/Hackintool). Didn't have to make any further adjustments.

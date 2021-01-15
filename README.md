@@ -81,27 +81,20 @@ Our final result looks like this.
 Before you try to hotpatch your battery I recommend to read this entire guide several times [Battery Status Hotpatch](https://www.tonymacx86.com/threads/guide-using-clover-to-hotpatch-acpi.200137/). The whole process of creating your own ```SSDT``` won't be discussed here. Adding the necessary methods into the right scopes shouldn't be too difficult. I think the only interesting part showing is the final trimmed  ```OperationRegion``` which looks like this. 
 
 ```
-                Offset (0x93),
-                TH00,8,TH01,8,
-                TH10,8,TH11,8,
-                
-                Offset (0xBE),
-                /*B0TM*/,   16,
-                /*B0C1*/,   16,
-                /*B0C2*/,   16,
-                XC30,8,XC31,8,
-                
-                Offset (0xDE),
-                /*B1TM*/,   16,
-                /*B1C1*/,   16,
-                /*B1C2*/,   16,
-                YC30,8,YC31,8,
-                
-                Offset (0xF4),
-                B0S0,8,B0S1,8,
-                
-                Offset (0xFC),
-                B1S0,8,B1S1,8
+            Offset (0xA0), 
+            CAPX,8,CAPY,8, 
+            /*RCP0*/,   16, 
+            VOTX,8,VOTY,8, 
+            CRTX,8,CRTY,8, 
+            /*BTM0*/,   16, 
+            /*BST0*/,   16, 
+            /*BRC0*/,   16, 
+            FCPX,8,FCPY,8, 
+            DCPX,8,DCPY,8, 
+            DVTX,8,DVTY,8, 
+            /*MER0*/,   16, 
+            /*MFD0*/,   16, 
+            BSNX,8,BSNY,8
 ```
 
 This is how the final ```SSDT-XBAT.aml``` looks like.

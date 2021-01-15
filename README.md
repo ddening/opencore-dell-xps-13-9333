@@ -28,7 +28,7 @@ Further research might be required at this point. As of now the results with Voo
 ### Brightness Keys SSDT Hotpatch
 Use the [ACPIdebug.kext](https://github.com/RehabMan/OS-X-ACPI-Debug) to figure out which methods needs to be patched. Refer to the section [Brightness Keys](https://www.tonymacx86.com/threads/guide-patching-dsdt-ssdt-for-laptop-backlight-control.152659/) for more information. Monitor the ```Console.app``` while pressing your key-combinaton to change the brightness. You should get something like this:
 
-IMAGE
+![system-log](resources/system-log.png)
 
 The ```system.log``` shows us that we have to patch the methods ```_Q80``` and ```_Q81```. Apply following patch to your ```DSDT.dsl```
 

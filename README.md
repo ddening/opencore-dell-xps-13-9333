@@ -25,7 +25,7 @@ This is the easy solution to get your trackpad and gestures working. Just use [V
 Trying to setup VoodooI2C over several days only resulted in the trackpad working with basic features. Gestures and scrolling doesn't seem to function on the Dell XPS 13 9333 this way. The trackpad gets recognised as ```TPD1```, but using VoodooI2C in combination with VoodooI2CHID and remvoing the interrupt sequence as suggested causes the trackpad to run in polling mode only (as seen in the system.log).
 Further research might be required at this point. As of now the results with VoodooPS2 are good enough.
 
-### Brightness Keys SSDT Hotpatch
+## Brightness Keys SSDT Hotpatch
 Use the [ACPIdebug.kext](https://github.com/RehabMan/OS-X-ACPI-Debug) to figure out which methods needs to be patched. Refer to the section [Brightness Keys](https://www.tonymacx86.com/threads/guide-patching-dsdt-ssdt-for-laptop-backlight-control.152659/) for more information. Monitor the ```Console.app``` while pressing your key-combinaton to change the brightness. You should get something like this:
 
 ![system-log](resources/system-log.png)
@@ -77,7 +77,7 @@ Our final result looks like this.
 
 
 
-### Battery SSDT Hotpatch
+## Battery SSDT Hotpatch
 Before you try to hotpatch your battery I recommend to read this entire guide several times [Battery Status Hotpatch](https://www.tonymacx86.com/threads/guide-using-clover-to-hotpatch-acpi.200137/). The whole process of creating your own ```SSDT``` won't be discussed here. Adding the necessary methods into the right scopes shouldn't be too difficult. I think the only interesting part showing is the final trimmed  ```OperationRegion``` which looks like this. 
 
 ```
@@ -339,7 +339,7 @@ This is how the final ```SSDT-XBAT.aml``` looks like.
 **Note:** I'm not an expert at hotpatching. This hotpatch might work on my system, but I can't guarantee it will work on yours. Use at your own risk. (You should create your own hotpatch anyways.)
 
 
-### Audio (ALC668)
+## Audio (ALC668)
 The audio device ```ALC3661``` is a rebrand of the ```ALC668```. In order to get the audio working you have you apply the ```layout-id``` mentioned under 
 [supported codecs](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs). In my case the ```layout-id=3``` seems to be working fine. If you're trying to get your audio working while using an active ```DSDT.aml``` in your ACPI folder you have to create a SSDT hotpatch instead of using the ```DSDT.aml```. An active ```DSDT.aml``` caused my audio not to function during debugging.
 

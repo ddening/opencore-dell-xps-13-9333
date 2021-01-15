@@ -336,6 +336,7 @@ This is how the final ```SSDT-XBAT.aml``` looks like.
 </details>
 
 **Note:** I'm not an expert at hotpatching. This hotpatch might work on my system, but I can't guarantee it will work on yours. Use at your own risk. (You should create your own hotpatch anyways.)
+**Note 2:** I suspect the SSDT-XBATT is currently causing problems. So don't use it at the moment.
 
 
 ## Audio (ALC668)

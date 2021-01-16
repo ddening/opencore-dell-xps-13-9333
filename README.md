@@ -27,6 +27,8 @@ sudo pmset -a hibernatemode 0
 sudo pmset -a proximitywake 0
 ```
 
+**Note:** I noticed that using my custom ```SSDTs``` below causes the trackpad and keyboard to stop working. The keyboard works again after closing and opening the lid of the laptop. At this point I keep using a patched ```DSDT``` until I figure out how to solve this problem.
+
 ### VoodooI2C (the non easy way)
 Trying to setup VoodooI2C over several days only resulted in the trackpad working with basic features. Gestures and scrolling doesn't seem to function on the Dell XPS 13 9333 this way. The trackpad gets recognised as ```TPD1```, but using VoodooI2C in combination with VoodooI2CHID and remvoing the interrupt sequence as suggested causes the trackpad to run in polling mode only (as seen in the ```system.log```).
 Further research might be required at this point. As of now the results with VoodooPS2 are good enough.
@@ -335,9 +337,6 @@ This is how the final ```SSDT-XBAT.aml``` looks like.
 </details>
 
 **Note:** I'm not an expert at hotpatching. This hotpatch might work on my system, but I can't guarantee it will work on yours. Use at your own risk. (You should create your own hotpatch anyways.)
-
-**Note 2:** I suspect the SSDT-XBATT is currently causing problems. So don't use it at the moment.
-
 
 ## Audio (ALC668)
 The audio device ```ALC3661``` is a rebrand of the ```ALC668```. In order to get the audio working you have you apply the ```layout-id``` mentioned under 

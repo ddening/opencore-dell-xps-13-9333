@@ -339,6 +339,7 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder
 .mfractor/
+.DS_Store
 
 # Local History for Visual Studio
 .localhistory/

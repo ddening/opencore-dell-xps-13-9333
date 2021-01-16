@@ -1,4 +1,6 @@
 # opencore-dell-xps-13-9333
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+
 A documentation about my progress setting up macOS Catalina on a Dell XPS 13 9333. This is not meant to be a guide. It's rather a collection of certain problems I have encountered during installation and how they got solved. See this just as another source of information for troubleshooting.
 
 ## System

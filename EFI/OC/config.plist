@@ -1151,8 +1151,7 @@
 	<key>Misc</key>
 	<dict>
 		<key>BlessOverride</key>
-		<array>
-		</array>
+		<array/>
 		<key>Boot</key>
 		<dict>
 			<key>ConsoleAttributes</key>
@@ -1308,7 +1307,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>keepsyms=1 debug=0x100 bpr_initialdelay=300 bpr_postresetdelay=300</string>
+				<string>keepsyms=1 debug=0x100</string>
 				<key>run-efi-updater</key>
 				<string>No</string>
 				<key>csr-active-config</key>
@@ -1385,7 +1384,7 @@
 			<key>ProcessorType</key>
 			<integer>0</integer>
 			<key>ROM</key>
-			<data>AAAAAAAA</data>
+			<data>MFLLgcfD</data>
 			<key>SpoofVendor</key>
 			<true/>
 			<key>SystemProductName</key>

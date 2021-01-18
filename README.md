@@ -343,7 +343,7 @@ This is how the final ```SSDT-XBAT.aml``` looks like.
 **Note:** I'm not an expert at hotpatching. This hotpatch might work on my system, but I can't guarantee it will work on yours. Use at your own risk. (You should create your own hotpatch anyways.)
 
 ## Audio (ALC668)
-The audio device ```ALC3661``` is a rebrand of the ```ALC668```. In order to get the audio working you have you apply the ```layout-id``` mentioned under 
+The audio device ```ALC3661``` is a rebrand of the ```ALC668```. In order to get the audio working you have to apply the ```layout-id``` mentioned under 
 [supported codecs](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs). In my case the ```layout-id=3``` seems to be working fine. If you're trying to get your audio working while using an active ```DSDT.aml``` in your ACPI folder you have to create a SSDT hotpatch instead of using the ```DSDT.aml```. An active ```DSDT.aml``` caused my audio not to function during debugging.
 
 ## Credits

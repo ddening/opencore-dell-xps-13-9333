@@ -35,7 +35,7 @@ sudo pmset -a proximitywake 0
 Trying to setup VoodooI2C over several days only resulted in the trackpad working with basic features. Gestures and scrolling doesn't seem to function on the Dell XPS 13 9333 this way. The trackpad gets recognised as ```TPD1```, but using VoodooI2C in combination with VoodooI2CHID and remvoing the interrupt sequence as suggested causes the trackpad to run in polling mode only (as seen in the ```system.log```).
 Further research might be required at this point. As of now the results with VoodooPS2 are good enough.
 
-**Note:** I think issues are caused by using the ```DSDT.aml```. I had success using ```SSDTs``` only, but my custom SSDTs for battery readouts and brightness keys seem to not work that way.
+**Note:** I think issues are caused by using the ```DSDT.aml```. I had success using ```SSDTs``` only, but my custom ```SSDTs``` for battery readouts and brightness keys seem to not work that way.
 
 ## Brightness Keys SSDT Hotpatch
 Use the [ACPIdebug.kext](https://github.com/RehabMan/OS-X-ACPI-Debug) to figure out which methods need to be patched. Refer to the section [Brightness Keys](https://www.tonymacx86.com/threads/guide-patching-dsdt-ssdt-for-laptop-backlight-control.152659/) for more information. Monitor the ```Console.app``` while pressing your key-combinaton to change the brightness. You should get something like this:

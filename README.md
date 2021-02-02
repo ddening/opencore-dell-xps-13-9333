@@ -31,7 +31,7 @@ sudo pmset -a proximitywake 0
 
 **Note:** I noticed that using my custom ```SSDTs``` below causes the trackpad and keyboard to stop working. The keyboard works again after closing and opening the lid of the laptop. At this point I keep using a patched ```DSDT``` until I figure out how to solve this problem.
 
-**Note 2:** VoodooI2C is working now. I didn't keep investigating the problem described above any further. Moving away from a single ```DSDT``` to custom ```SSDTs``` solved any other problems that occured previously.
+**Note:** VoodooI2C is working now. I didn't keep investigating the problem described above any further. Moving away from a single ```DSDT``` to custom ```SSDTs``` solved any other problems that occured previously.
 
 ### VoodooI2C (the non easy way)
 Trying to setup VoodooI2C over several days only resulted in the trackpad working with basic features. Gestures and scrolling doesn't seem to function on the Dell XPS 13 9333 this way. The trackpad gets recognised as ```TPD1```, but using VoodooI2C in combination with VoodooI2CHID and remvoing the interrupt sequence as suggested causes the trackpad to run in polling mode only (as seen in the ```system.log```).

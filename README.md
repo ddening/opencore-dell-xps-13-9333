@@ -63,6 +63,9 @@ DefinitionBlock ("", "SSDT", 2, "hack", "I2C", 0x00000000)
 }
 ```
 
+The ```voodoo.log```is also showing that the device is being recognized.
+![voodoo-log](resources/voodoo-log.png)
+
 ## Brightness Keys SSDT Hotpatch
 Use the [ACPIdebug.kext](https://github.com/RehabMan/OS-X-ACPI-Debug) to figure out which methods need to be patched. Refer to the section [Brightness Keys](https://www.tonymacx86.com/threads/guide-patching-dsdt-ssdt-for-laptop-backlight-control.152659/) for more information. Monitor the ```Console.app``` while pressing your key-combinaton to change the brightness. You should get something like this:
 

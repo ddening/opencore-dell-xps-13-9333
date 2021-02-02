@@ -31,11 +31,13 @@ sudo pmset -a proximitywake 0
 
 **Note:** I noticed that using my custom ```SSDTs``` below causes the trackpad and keyboard to stop working. The keyboard works again after closing and opening the lid of the laptop. At this point I keep using a patched ```DSDT``` until I figure out how to solve this problem.
 
+**Note 2:** VoodooI2C is working now. I didn't keep investigating the problem described above any further. Moving away from a single ```DSDT``` to custom ```SSDTs``` solved any other problems that occured previously.
+
 ### VoodooI2C (the non easy way)
 Trying to setup VoodooI2C over several days only resulted in the trackpad working with basic features. Gestures and scrolling doesn't seem to function on the Dell XPS 13 9333 this way. The trackpad gets recognised as ```TPD1```, but using VoodooI2C in combination with VoodooI2CHID and remvoing the interrupt sequence as suggested causes the trackpad to run in polling mode only (as seen in the ```system.log```).
 Further research might be required at this point. As of now the results with VoodooPS2 are good enough.
 
-**Note:** I think issues are caused by using the ```DSDT.aml```. I had success using ```SSDTs``` only, but my custom ```SSDTs``` for battery readouts and brightness keys seem to not work that way.
+**Update:** Trackpad over I2C is working with full gesture support now. I had to use [VoodooI2C](https://github.com/VoodooI2C/VoodooI2C) in combination with [VoodooRMI](https://github.com/VoodooSMBus/VoodooRMI). 
 
 ## Brightness Keys SSDT Hotpatch
 Use the [ACPIdebug.kext](https://github.com/RehabMan/OS-X-ACPI-Debug) to figure out which methods need to be patched. Refer to the section [Brightness Keys](https://www.tonymacx86.com/threads/guide-patching-dsdt-ssdt-for-laptop-backlight-control.152659/) for more information. Monitor the ```Console.app``` while pressing your key-combinaton to change the brightness. You should get something like this:
@@ -352,4 +354,5 @@ The audio device ```ALC3661``` is a rebrand of the ```ALC668```. In order to get
 - [OpenIntelWireless](https://github.com/OpenIntelWireless)
 - [Dortania Guides](https://dortania.github.io/getting-started/)
 - [headkaze](https://github.com/headkaze)
+- [VoodooSMBus](https://github.com/VoodooSMBus/VoodooRMI)
 

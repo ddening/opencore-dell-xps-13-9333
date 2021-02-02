@@ -39,6 +39,30 @@ Further research might be required at this point. As of now the results with Voo
 
 **Update:** Trackpad over I2C is working with full gesture support now. I had to use [VoodooI2C](https://github.com/VoodooI2C/VoodooI2C) in combination with [VoodooRMI](https://github.com/VoodooSMBus/VoodooRMI). 
 
+In my case I had to rename the I2C Serial Bus name **SBFI** to **SBFB**. The ```SSDT-I2C.aml``` for the GPI0 Pinning looks like this.
+
+```
+DefinitionBlock ("", "SSDT", 2, "hack", "I2C", 0x00000000)
+{
+    External (_SB_.PCI0.I2C1.TPD1, DeviceObj)
+
+    Scope (_SB.PCI0.I2C1.TPD1)
+    {
+        Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
+        {
+            Name (SBFB, ResourceTemplate ()
+            {
+                I2cSerialBusV2 (0x002C, ControllerInitiated, 0x00061A80,
+                    AddressingMode7Bit, "\\_SB.PCI0.I2C1",
+                    0x00, ResourceConsumer, , Exclusive,
+                    )
+            })
+            Return (SBFB) /* \_SB_.PCI0.I2C1.TPD1._CRS.SBFB */
+        }
+    }
+}
+```
+
 ## Brightness Keys SSDT Hotpatch
 Use the [ACPIdebug.kext](https://github.com/RehabMan/OS-X-ACPI-Debug) to figure out which methods need to be patched. Refer to the section [Brightness Keys](https://www.tonymacx86.com/threads/guide-patching-dsdt-ssdt-for-laptop-backlight-control.152659/) for more information. Monitor the ```Console.app``` while pressing your key-combinaton to change the brightness. You should get something like this:
 

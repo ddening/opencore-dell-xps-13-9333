@@ -375,7 +375,7 @@ This is how the final ```SSDT-XBAT.aml``` looks like.
 The audio device codec of the Dell XPS 13 is ```ALC3661``` which is a rebrand of the ```ALC668```. In order to get the audio working you have to apply the ```layout-id``` mentioned under 
 [supported codecs](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs). In my case the ```layout-id=3``` seems to be working fine. If you're trying to get your audio working while using an active ```DSDT.aml``` in your ACPI folder you have to create a SSDT hotpatch instead of using the ```DSDT.aml```. An active ```DSDT.aml``` caused my audio not to function during debugging.
 
-## Credits
+## Acknowledgement/Credits
 - [acidanthera](https://github.com/acidanthera) 
 - [RehabMan](https://github.com/RehabMan)
 - [OpenIntelWireless](https://github.com/OpenIntelWireless)
